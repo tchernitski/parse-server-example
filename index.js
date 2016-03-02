@@ -33,7 +33,8 @@ app.get('/', function(req, res) {
 });
 
 app.get('/resources/images', function(req, res) {
-  res.status(200).send('Images.');
+  res.sendfile('/resources/images/Veronica-Tanya-Max.jpg');
+  // res.status(200).send('Images.');
 });
 
 var port = process.env.PORT || 1337;

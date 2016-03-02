@@ -33,7 +33,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/resources/images', function(req, res) {
-  res.sendfile('/resources/images/Veronica-Tanya-Max.jpg');
+  res.sendfile('./resources/images/Veronica-Tanya-Max.jpg');
   // res.status(200).send('Images.');
 });
 

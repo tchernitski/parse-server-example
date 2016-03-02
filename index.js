@@ -26,16 +26,17 @@ var app = express();
 // Serve the Parse API on the /parse URL prefix
 var mountPath = process.env.PARSE_MOUNT || '/parse';
 app.use(mountPath, api);
+app.use(express.static(process.cwd() + '/resources'));
 
 // Parse Server plays nicely with the rest of your web routes
 app.get('/', function(req, res) {
   res.status(200).send('I dream of being a web site.');
 });
 
-app.get('/resources/images', function(req, res) {
-  res.sendfile('./resources/images/Veronica-Tanya-Max.jpg');
-  // res.status(200).send('Images.');
-});
+// app.get('/resources/images', function(req, res) {
+//   res.sendfile('./resources/images/Veronica-Tanya-Max.jpg');
+//   // res.status(200).send('Images.');
+// });
 
 var port = process.env.PORT || 1337;
 app.listen(port, function() {
